@@ -1,0 +1,73 @@
+    <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Todd Taylor's Website</title>
+    <link rel="stylesheet" href="style.css">
+    <div class="grain-overlay"></div>
+</head>
+  <body>
+    
+    <main>
+      <h1>Welcome.</h1>
+      <section>
+        <h2 class="introduction">A website showcasing myself and the skills I have learnt throughout my coding journey!
+        </h2>
+      </section>
+
+      <section>
+        <div class = 'buttonsDiv'>
+        <!-- Button to show home -->
+          <a class="welcome" href="index.html">Welcome</a>
+        <!-- Button to show about me -->
+          <a class="aboutMe" href="aboutMe.html">About Me</a>
+        <!-- Button to show cv -->
+          <a class="cv" href="cv.html">CV</a>
+        <!-- Button to show Wess Vex -->
+          <a class="wessVex" href="wessVex.html">Wess Vex</a>
+        </div>
+      </section>
+      <h3>Please see one of the newest things I have learnt; generating an image carousel that cycles through my latest photoshoot at a Scottish Beach!</h3>
+      
+      <section>
+        <div class="carousel">
+            <div class="slides">
+                <!-- Images -->
+                <img src="Beach1.JPG" alt="Image 1">
+                <img src="Beach2.JPG" alt="Image 2">
+                <img src="Beach3.JPG" alt="Image 3">
+                <img src="Beach6.JPG" alt="Image 4">
+                <img src="Beach7.JPG" alt="Image 5">
+                <!-- Add more images as needed -->
+            </div>
+            <button class="prev">Previous</button>
+            <button class="next">Next</button>
+        </div>
+      </section>
+
+      <section>
+        <form>
+          <fieldset>
+            <legend>So, will you give me a chance to interview?</legend>
+            <input id="yes" type="checkbox" name="interview?" value="yes" checked> <label for="yes">Of Course!</label>
+            <input id="unsure" type="checkbox" name="interview?" value="unsure"> <label for="unsure">Hmmmm, let me think it over...</label>
+            <input id="no" type="checkbox" name="interview?" value="no"> <label for="no">Try Again :(</label>
+          </fieldset>
+        </form>
+      </section>
+
+    </main>
+    <footer>
+      <p>
+        No Copyright - Don't be silly, I've only just learnt to code, how could I even begin to <a href="https://www.boredpanda.com/angry-kittens/">Copyright</a> things.
+      </p>
+      <div class = 'footersDiv'>
+        <a href="https://www.codewars.com/users/Wess01924/badges/large"><button class="codeWars"></button></a>
+        <a href="https://www.freecodecamp.org/fccaf24f657-7217-449a-b5a3-fc7232dcc1e7"><button class="freeCodeCamp"></button></a>
+        <a href="https://github.com/tt01924?tab=overview&from=2024-02-01&to=2024-02-19"></a><button class="gitHub"></button></a>
+      </div>
+    </footer>
+    <script src="script.js"></script>
+  </body>
+</html>
