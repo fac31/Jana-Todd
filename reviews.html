@@ -10,13 +10,42 @@
 </head>
 
 <body>
-  <div class='buttonsDiv'>
-    <a class="welcome" href="index.html">Welcome</a>
-    <a class="reviews" href="reviews.html">Reviews</a>
-    <a class="packages" href="packages.html">Packages</a>
-    <a class="travelEquipment" href="travelEquipment.html">Travel Equipment</a>
-  </div>
+  <header>
+    <nav class='buttonsDiv'>
+      <a class="welcome" href="index.html">Welcome</a>
+      <a class="reviews" href="reviews.html">Reviews</a>
+      <a class="packages" href="packages.html">Packages</a>
+      <a class="travelEquipment" href="travelEquipment.html">Travel Equipment</a>
+    </nav>
+  </header>
 
+  <main>
+    <h1>Reviews</h1>
+
+    <div class="reviews-container">
+
+      <!-- example to show html structure, replace later with real content!!! -->
+      <div class="review">
+        <h4 class="review-name">Mr. Example Reviewer</h4>
+        <img src="" class="review-avatar" alt="user avatar">
+        <p class="review-text">I had a jolly good time thanks</p>
+      </div>
+      <!-- end example -->
+
+    </div>
+  </main>
+
+  <section>
+    <form class="review-form" action="">
+      <label for="name">Name:</label>
+      <input type="text" id="name">
+      <label for="rating">Rating:</label>
+      <input type="number" max="5" min="1" id="rating">
+      <label for="comments">Comments:</label>
+      <textarea id="comments"></textarea>
+      <button type="submit">submit</button>
+    </form>
+  </section>
 </body>
 
 </html>
