@@ -203,52 +203,6 @@ code {
     cursor: pointer;
 }
 
-/* .aboutMe:hover {
-    background-color: #5b5b5b;
-}
-
-.cv {
-    display: inline-block;
-    padding: 10px 20px;
-    background-color: #9C002F;
-    color: #ededed;
-    text-decoration: none;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-}
-
-
-.cv:hover {
-    background-color: #5b5b5b;
-}
-
-.wessVex {
-    display: inline-block;
-    padding: 10px 20px;
-    background-color: #9C002F;
-    color: #ededed;
-    text-decoration: none;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-}
-
-.wessVex:hover {
-    background-color: #5b5b5b;
-}
-.grain-overlay {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background-image: url('Texture2.png');
-  pointer-events: none;
-  opacity: 0.1;
-}
-         */
-
 /* CSS for carousel container */
 .carousel {
     position: relative;
@@ -327,14 +281,6 @@ code {
 .gallery::after {
     content: "";
     width: 350px;
-}
-
-.wessImage4 img {
-    align-items: center;
-    width: 100%;
-    max-width: 350px;
-    height: 300px;
-    object-fit: cover;
 }
 
 .cvGallery {
