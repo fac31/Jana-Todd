@@ -69,18 +69,22 @@
           <label for="no">I want to write a complaint*</label>
         </fieldset>
 
-        <label for="textInput">Full Name:</label>
-        <textarea id="textInput" name="text" rows="1" cols="25"></textarea>
+        <label for="name" class="flex-col">Full Name:
+          <input id="name" type="text" name="name">
+        </label>
 
-        <label for="textInput">Universal Mail:</label>
-        <textarea id="textInput" name="text" rows="1" cols="25"></textarea>
+        <label for="mail" class="flex-col">Universal Mail:
+          <input id="mail" name="mail" type="text">
+        </label>
 
-        <label for="textInput">Please give a detailed response regarding your reason for contact:</label>
-        <textarea id="textInput" name="text" rows="4" cols="50"></textarea>
+        <label for="reason" class="flex-col">Please give a detailed response regarding your reason for contact:
+          <textarea id="reason" name="reason" rows="4"></textarea>
+        </label>
+
         <input class="btn" type="submit" value="Submit">
 
-        <p>*If you do decide to write a complaint, our ex-marauding colleague Rupert the Swinebelly will give you a swift
-          death.</p>
+        <small>*If you do decide to write a complaint, our ex-marauding colleague Rupert the Swinebelly will give you a swift
+          death.</small>
       </form>
     </section>
 
