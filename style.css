@@ -79,7 +79,7 @@ label {
   gap: 0.5rem;
 }
 
-label > input[type="text"], label > textarea {
+label > input[type="text"], label > textarea, label > input[type="number"] {
   width: 100%;
   display: block;
   padding: 0.5rem;

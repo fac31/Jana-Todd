@@ -17,46 +17,29 @@
   </nav>
   <main>
     <h1>See what our customers say.</h1>
-    <div class="primaryReview">
-      <div class="primaryReviewHeader">
-        <img src="">
-        <h4>Genuinely horrendous.</h4>
-        <div class="starRating">
-          <i>Star rating</i>
-        </div>
-      </div>
-      <p>Where to start; I could lead with being beheaded by the Bork-a-naughts one week into the cruise, or should I
-        begin with the water-boarding on planet Xing-Gong-32T that I received instead?<br> The marmite was useless and
-        I didn't even get to bite into my second egg. Would not recommend, daylight robbery and they have the cheek to
-        make you pay for parking.</p>
-    </div>
-    <div class="secondaryReview">
-      <div class="secondaryReviewHeader">
-        <img src="">
-        <h4>DO NOT CHOOSE ROGER MOORE!!</h4>
-        <div class="starRating">
-          <i>Star rating</i>
-        </div>
-      </div>
-      <p>Absolute lunatic. The guy has no idea what's going on, he rambles on about someone named Hugo Drax and shoots
-        anything that moves; worst tour guide EVER.</p>
-    </div>
+    <!-- content will be inserted here by script -->
   </main>
   <section>
     <form id="textForm">
-      <label for="name">Full Name::</label>
-      <input id="name" name="name" type="text">
-      <label for="rating">Rating:</label>
-      <input id="rating" name="rating" type="number">
-      <label for="comment">Your Comment:</label>
-      <textarea id="comment" name="comment" rows="4" cols="50"></textarea>
-      <input type="submit" value="Submit">
+      <h3>Leave a review</h3>
+
+      <label for="name">Full Name:
+        <input id="name" name="name" type="text" required>
+      </label>
+
+      <label for="rating">Rating:
+        <input id="rating" name="rating" type="number" required>
+      </label>
+
+      <label for="comment">Your Comment:
+        <textarea id="comment" name="comment" rows="4" cols="50"></textarea>
+      </label>
+      <input type="submit" value="Submit" class="btn">
     </form>
   </section>
 
-
-
-<script>
+<script type="module">
+  import reviews from "./reviewData.js"
   const form = document.getElementById("textForm")
   const main = document.querySelector("main")
 
@@ -77,17 +60,20 @@
   }
 
   const appendNewReview = (data) => {
-    const htmlString = `<div class="review"><div class="reviewHeader"><img src="">
+    const htmlString = `<div class="reviewHeader">
+      <img src="">
       <h4>${data.name}</h4>
       <div class="starRating">
         <i>${new Array(parseInt(data.rating)).fill("*").join("")}</i>
         </div></div>
-        <p>${data.comment}</p>
-      </div>`;
+        <p>${data.comment}</p>`;
       const newReview = document.createElement("div")
+      newReview.classList.add("review")
       newReview.innerHTML = htmlString
       main.appendChild(newReview)
   }
+
+  reviews.forEach(r => appendNewReview(r))
 
   form.addEventListener("submit", (e) => {
     e.preventDefault();
