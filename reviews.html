@@ -1,52 +1,100 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>See what our customers have said!</title>
-    <link rel="stylesheet" href="style.css">
-    <div class="grain-overlay"></div>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>See what our customers have said!</title>
+  <link rel="stylesheet" href="style.css">
 </head>
+
 <body>
+  <nav class='buttonsDiv'>
+    <a class="welcome" href="index.html">Welcome</a>
+    <a class="reviews" href="reviews.html">Reviews</a>
+    <a class="packages" href="packages.html">Packages</a>
+    <a class="travelEquipment" href="travelEquipment.html">Travel Equipment</a>
+  </nav>
+  <main>
     <h1>See what our customers say.</h1>
-    <div class = 'buttonsDiv'>
-      <a class="welcome" href="index.html">Welcome</a>
-      <a class="reviews" href="reviews.html">Reviews</a>
-      <a class="packages" href="packages.html">Packages</a>
-      <a class="travelEquipment" href="travelEquipment.html">Travel Equipment</a>
-    </div>
-    <main>
     <div class="primaryReview">
       <div class="primaryReviewHeader">
-        <img src="imageProfile1">
+        <img src="">
         <h4>Genuinely horrendous.</h4>
-          <div class="starRating">
-            <i>Star rating</i>
-          </div>
-        <p>Where to start; I could lead with being beheaded by the Bork-a-naughts one week into the cruise, or should I begin with the water-boarding on planet Xing-Gong-32T that I received instead?<br> The marmite was useless and I didn't even get to bite into my second egg. Would not recommend, daylight robbery and they have the cheek to make you pay for parking.</p>
+        <div class="starRating">
+          <i>Star rating</i>
+        </div>
       </div>
+      <p>Where to start; I could lead with being beheaded by the Bork-a-naughts one week into the cruise, or should I
+        begin with the water-boarding on planet Xing-Gong-32T that I received instead?<br> The marmite was useless and
+        I didn't even get to bite into my second egg. Would not recommend, daylight robbery and they have the cheek to
+        make you pay for parking.</p>
     </div>
     <div class="secondaryReview">
       <div class="secondaryReviewHeader">
-        <img src="imageProfile2">
+        <img src="">
         <h4>DO NOT CHOOSE ROGER MOORE!!</h4>
-          <div class="starRating">
-            <i>Star rating</i>
-          </div>
-        <p>Absolute lunatic. The guy has no idea what's going on, he rambles on about someone named Hugo Drax and shoots anything that moves; worst tour guide EVER.</p>
+        <div class="starRating">
+          <i>Star rating</i>
+        </div>
       </div>
+      <p>Absolute lunatic. The guy has no idea what's going on, he rambles on about someone named Hugo Drax and shoots
+        anything that moves; worst tour guide EVER.</p>
     </div>
-    </main>
-    <section>
-      <form id="textForm" onsubmit="submitForm(event)">
-        <label for="textInput">Full Name::</label><br>
-        <textarea id="textInput" name="text" rows="1" cols="25"></textarea><br>
-        <label for="textInput">Rating:</label><br>
-        <textarea id="textInput" name="text" rows="1" cols="25"></textarea><br>
-        <label for="textInput">Your Comment:</label><br>
-        <textarea id="textInput" name="text" rows="4" cols="50"></textarea><br>
-        <input type="submit" value="Submit">
-      </form>
-    </section>
+  </main>
+  <section>
+    <form id="textForm">
+      <label for="name">Full Name::</label>
+      <input id="name" name="name" type="text">
+      <label for="rating">Rating:</label>
+      <input id="rating" name="rating" type="number">
+      <label for="comment">Your Comment:</label>
+      <textarea id="comment" name="comment" rows="4" cols="50"></textarea>
+      <input type="submit" value="Submit">
+    </form>
+  </section>
+
+
+
+<script>
+  const form = document.getElementById("textForm")
+  const main = document.querySelector("main")
+
+  const collectFormData = (e) => {
+    const data = {}
+    // convert HTMLformcollection into array and remove the final element (submit button)
+    let elements = [...e.target.elements].slice(0,-1)
+    try {
+      elements.forEach(({ name, value }) => {
+        // for each element, create a key value pair in data from the name and value attributes
+        // TODO: sanitise input
+        data[name] = value
+      })
+    } catch (error) {
+      console.error(error)
+    }
+    return data
+  }
+
+  const appendNewReview = (data) => {
+    const htmlString = `<div class="review"><div class="reviewHeader"><img src="">
+      <h4>${data.name}</h4>
+      <div class="starRating">
+        <i>${new Array(parseInt(data.rating)).fill("*").join("")}</i>
+        </div></div>
+        <p>${data.comment}</p>
+      </div>`;
+      const newReview = document.createElement("div")
+      newReview.innerHTML = htmlString
+      main.appendChild(newReview)
+  }
+
+  form.addEventListener("submit", (e) => {
+    e.preventDefault();
+    const data = collectFormData(e)
+    appendNewReview(data)
+  })
+</script>
 </body>
+
 </html>
