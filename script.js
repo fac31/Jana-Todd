@@ -16,3 +16,12 @@ nextButton.addEventListener('click', () => {
         behavior: 'smooth'
     });
 });
+
+const carousel = document.querySelector('.slides');
+const altText = document.querySelector('.alt-text');
+
+// Add event listener for carousel change (e.g., on slide change)
+carousel.addEventListener('change', () => {
+  const currentImage = carousel.querySelector('img.active');
+  altText.textContent = currentImage.alt;
+});

@@ -213,9 +213,21 @@ code {
 /* CSS for slides */
 .slides {
     display: flex; /* Arrange slides in a row */
-    overflow-x: auto; /* Enable horizontal scrolling */
+    overflow-x: hidden; /* Enable horizontal scrolling - auto */
     scroll-snap-type: x mandatory; /* Enable snap scrolling */
+    display: flex;
 }
+
+/* CSS for description of slides */
+.alt-text {
+    position: absolute;
+    bottom: 0; /* Position at the bottom */
+    left: 0; /* Position at the left */
+    width: 100%; /* Full width */
+    background-color: rgba(255, 255, 255, 0.7); /* Semi-transparent white background */
+    padding: 5px; /* Add padding */
+    box-sizing: border-box; /* Include padding and border in width/height calculations */
+  }
 
 /* CSS for individual slide (image) */
 .slides img {
