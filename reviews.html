@@ -8,14 +8,22 @@
     <div class="grain-overlay"></div>
 </head>
 <body>
-    <h1>See what our customers say.</h1>
-    <div class = 'buttonsDiv'>
-      <a class="welcome" href="index.html">Welcome</a>
-      <a class="reviews" href="reviews.html">Reviews</a>
-      <a class="packages" href="packages.html">Packages</a>
-      <a class="travelEquipment" href="travelEquipment.html">Travel Equipment</a>
-    </div>
-    <main>
+  <header>
+    <nav class='buttonsDiv'>
+      <a class="nav-link" href="index.html">Welcome</a>
+      <a class="nav-link" href="reviews.html">Reviews</a>
+      <a class="nav-link" href="packages.html">Packages</a>
+      <a class="nav-link" href="travelEquipment.html">Equipment</a>
+    </nav>
+  </header>
+  <main>
+  <section>
+    <h1 class="accent">See what our customers say.</h1>
+    <p>Our customers are valuable to us. Not simply because they line our pockets with large sums of cash, but they usually (and it really is more often than not, honestly you wouldn't believe what parents let their kids get away with these days) sport amusing haircuts which we can point and laugh at as we blast them into the void.<br>
+    See what they have to say about our impeccable services below.</p>
+  </section>
+  
+  <section>
     <div class="primaryReview">
       <div class="primaryReviewHeader">
         <img src="imageProfile1">
@@ -26,6 +34,9 @@
         <p>Where to start; I could lead with being beheaded by the Bork-a-naughts one week into the cruise, or should I begin with the water-boarding on planet Xing-Gong-32T that I received instead?<br> The marmite was useless and I didn't even get to bite into my second egg. Would not recommend, daylight robbery and they have the cheek to make you pay for parking.</p>
       </div>
     </div>
+  </section>
+
+  <section>
     <div class="secondaryReview">
       <div class="secondaryReviewHeader">
         <img src="imageProfile2">
@@ -36,17 +47,32 @@
         <p>Absolute lunatic. The guy has no idea what's going on, he rambles on about someone named Hugo Drax and shoots anything that moves; worst tour guide EVER.</p>
       </div>
     </div>
-    </main>
+    </section>
+
     <section>
       <form id="textForm" onsubmit="submitForm(event)">
-        <label for="textInput">Full Name::</label><br>
-        <textarea id="textInput" name="text" rows="1" cols="25"></textarea><br>
-        <label for="textInput">Rating:</label><br>
-        <textarea id="textInput" name="text" rows="1" cols="25"></textarea><br>
-        <label for="textInput">Your Comment:</label><br>
-        <textarea id="textInput" name="text" rows="4" cols="50"></textarea><br>
-        <input type="submit" value="Submit">
+        <label for="name" class="flex-col">Full Name:
+          <input id="name" type="text" name="name">
+        </label>
+        <label for="textInput" class="rating-container">Rating:
+          <label for="rating">Rate out of 5:</label><br>
+          <input type="radio" id="rating1" name="rating" value="1">
+          <label for="rating1">1</label>
+          <input type="radio" id="rating2" name="rating" value="2">
+          <label for="rating2">2</label>
+          <input type="radio" id="rating3" name="rating" value="3">
+          <label for="rating3">3</label>
+          <input type="radio" id="rating4" name="rating" value="4">
+          <label for="rating4">4</label>
+          <input type="radio" id="rating5" name="rating" value="5" checked>
+          <label for="rating5">5</label><br>
+        </label>
+        <label for="reason" class="flex-col">Please type your comment here:
+          <textarea id="reason" name="reason" rows="4"></textarea>
+        </label>
+        <input class="btn" type="submit" value="Submit">
       </form>
     </section>
+  </main>
 </body>
 </html>

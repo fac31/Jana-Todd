@@ -1,27 +1,25 @@
-// JavaScript for carousel functionality
-const prevButton = document.querySelector('.prev');
-const nextButton = document.querySelector('.next');
-const slides = document.querySelector('.slides');
-
-prevButton.addEventListener('click', () => {
-    slides.scrollBy({
-        left: -slides.offsetWidth,
-        behavior: 'smooth'
-    });
-});
-
-nextButton.addEventListener('click', () => {
-    slides.scrollBy({
-        left: slides.offsetWidth,
-        behavior: 'smooth'
-    });
-});
-
-const carousel = document.querySelector('.slides');
-const altText = document.querySelector('.alt-text');
-
-// Add event listener for carousel change (e.g., on slide change)
-carousel.addEventListener('change', () => {
-  const currentImage = carousel.querySelector('img.active');
-  altText.textContent = currentImage.alt;
-});
+document.addEventListener('DOMContentLoaded', function() {
+    const textItems = document.querySelectorAll('.text-item');
+    let currentIndex = 0;
+  
+    // Show initial text item
+    textItems[currentIndex].classList.add('active');
+  
+    // Function to navigate to the previous text item
+    function showPreviousText() {
+      textItems[currentIndex].classList.remove('active');
+      currentIndex = (currentIndex - 1 + textItems.length) % textItems.length;
+      textItems[currentIndex].classList.add('active');
+    }
+  
+    // Function to navigate to the next text item
+    function showNextText() {
+      textItems[currentIndex].classList.remove('active');
+      currentIndex = (currentIndex + 1) % textItems.length;
+      textItems[currentIndex].classList.add('active');
+    }
+  
+    // Event listeners for the buttons
+    document.querySelector('.prev-button').addEventListener('click', showPreviousText);
+    document.querySelector('.next-button').addEventListener('click', showNextText);
+  });

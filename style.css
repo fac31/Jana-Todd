@@ -171,6 +171,49 @@ code {
 }
 
 /* ========================================= */
+/* Carousel styling */
+
+.text-carousel {
+    position: relative;
+  }
+  
+  .text-item {
+    display: none;
+    margin: 100px;
+  }
+  
+  .text-item.active {
+    display: block;
+  }
+  
+  button {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    cursor: pointer;
+    padding: 5px 10px;
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+  }
+  
+  .prev-button {
+    left: 10px;
+  }
+  
+  .next-button {
+    right: 10px;
+  }
+/* =============================================== */
+/* Review radio buttons */
+
+.rating-container input[type="radio"] {
+    display: inline-block;
+    margin-right: 5px; /* Adjust spacing between radio buttons */
+  }
+
+/* ============================= */
 
 .introduction {
     text-align: center;
@@ -203,101 +246,6 @@ code {
     cursor: pointer;
 }
 
-/* CSS for carousel container */
-.carousel {
-    position: relative;
-    max-width: 600px; /* Set maximum width */
-    margin: 0 auto; /* Center the carousel */
-}
-
-/* CSS for slides */
-.slides {
-    display: flex; /* Arrange slides in a row */
-    overflow-x: hidden; /* Enable horizontal scrolling - auto */
-    scroll-snap-type: x mandatory; /* Enable snap scrolling */
-    display: flex;
-}
-
-/* CSS for description of slides */
-.alt-text {
-    position: absolute;
-    bottom: 0; /* Position at the bottom */
-    left: 0; /* Position at the left */
-    width: 100%; /* Full width */
-    background-color: rgba(255, 255, 255, 0.7); /* Semi-transparent white background */
-    padding: 5px; /* Add padding */
-    box-sizing: border-box; /* Include padding and border in width/height calculations */
-  }
-
-/* CSS for individual slide (image) */
-.slides img {
-    flex: 0 0 auto; /* Disable flex grow and shrink */
-    scroll-snap-align: start; /* Snap to start of each slide */
-    width: 100%; /* Fill the container width */
-    height: auto; /* Maintain aspect ratio */
-}
-
-/* CSS for navigation buttons */
-.prev,
-.next {
-    position: absolute;
-    top: 50%;
-    transform: translateY(-50%);
-    padding: 10px 20px;
-    background-color: #9C002F;
-    color: #ededed;
-    border: none;
-    cursor: pointer;
-    font-family: monospace;
-    border-radius: 5px;
-}
-
-.next {
-    right: 0;
-}
-.prev {
-    left: 0;
-}
-
-.next:hover {
-    background-color: #5b5b5b;
-}
-
-.prev:hover {
-    background-color: #5b5b5b;
-}
-
-
-
-
-.gallery {
-    display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
-    justify-content: center;
-    align-items: center;
-    gap: 16px;
-    max-width: 1400px;
-    margin: 0 auto;
-    padding: 20px 10px;
-    overflow: visible;
-}
-
-.gallery img {
-    width: 100%;
-    max-width: 350px;
-    height: 300px;
-    object-fit: cover;
-}
-
-.gallery::after {
-    content: "";
-    width: 350px;
-}
-
-.cvGallery {
-    display: flex;
-}
 /* CSS for image wrapper */
 .image-wrapper {
     margin-right: 100px; /* Optional: Add margin between images */
