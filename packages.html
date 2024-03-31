@@ -16,54 +16,55 @@
           <a class="nav-link" href="travelEquipment.html">Equipment</a>
         </nav>
       </header>
-    <h1 class="accent">Packages</h1>
-    <h2>Our award winning packages are second to none and provide you with security, comfort, and an intergalactic adventure crazier than The Rolling Stones Tour Bus in the 1970's.<br>
-    Please see our selection of travel packages below.</h2>
-        
+    <section>
+        <h1 class="accent"> Travel Packages</h1>
+        <h3>Our award winning packages are second to none and provide you with security, comfort, and an intergalactic adventure crazier than The Rolling Stones Tour Bus in the 1970's.</h3>
+        <p>Please see our selection of travel packages below. If you would like to enquire about any one of our services please reach out via our home page 'contact us' form at the bottom of the page.</p>
+    </section>
     
     <section>
-        <h3>Join one of our trusted cosmic nomads on a personal trip as they sparodically shuffle around the galaxy:</h3>
-            <div class="text-carousel">
-                <div class="text-item active">Rupert the swinebelly. Previously a full-time marauder, Rupert has left his past behind to pursue a career as a travel guide.</div>
-                <div class="text-item">Xex-k7. Being only 7000 years old means Xex-k7 still has a passion for exploration. He is currently on a gap-century working with our travel team.</div>
-                <div class="text-item">Rock. What you see is what you get.</div>
-                <div class="text-item">Roger Moore. Frequently tours the nebula region, enjoys long walks in the park on days off.</div>
-                <div class="text-item">Hector. Currently dead and awaiting reincarnation, will not be available until next week.</div>
-                <button class="prev-button">Previous</button>
-                <button class="next-button">Next</button>
-            </div>
-    </section>
+        <h4>Join one of our trusted cosmic nomads on a personal trip as they sparodically shuffle around the galaxy:</h4>
 
-    <!--
-
-    <section>
-        <h3>Take to the stars with one of our cruise liners where you can meet other morons with a similar appetite for interdimensional travel:</h3>
-        <div class="cvGallery">
-            <div class="carousel">
-                <div class="slides">
-                    <img src="Beach1.JPG" alt="The Big-Berther 700. With a 24/7 meat buffet, this space cruiser holds 500 human passengers or 27,000 live Lindt Chocolate bunnies depending on which is your preferred measurement.">
-                    <img src="Beach2.JPG" alt="Chimney Pot. Whilst the ship's name may be unflattering, I can assure you this is the height of luxerious travelling. No photo available (It's not 'ugly' in the convential sense, would prefer if you didn't judge a book by it's cover).">
-                    <img src="Beach3.JPG" alt="Cesspit. No dancing around this one, she's a rough cruiser and uninhabitable if you stay on for too long, excellent price however.">
+            <div class="carousel-container">
+                <button id="prevBtn" onclick="prevSlide()">Previous</button>
+                <div id="carousel">
+                    <div class="slide active">Rupert the swinebelly. Previously a full-time marauder, Rupert has left his past behind to pursue a career as a travel guide.</div>
+                    <div class="slide">Xex-k7. Being only 7000 years old means Xex-k7 still has a passion for exploration. He is currently on a gap-century working with our travel team.</div>
+                    <div class="slide">Rock. What you see is what you get.</div>
+                    <div class="slide">Roger Moore. Frequently tours the nebula region, enjoys long walks in the park on days off.</div>
+                    <div class="slide">Hector. Currently dead and awaiting reincarnation, will not be available until next week.</div>    
                 </div>
-                <button class="prev">Previous</button>
-                <button class="next">Next</button>
+                <button id="nextBtn" onclick="nextSlide()">Next</button>
             </div>
-        </div>
     </section>
 
     <section>
-        <h3>If the above don't float your boat, we do have the c-suite travel packages attached below.</h3>
-        <p>While costing a pretty penny, these methods of travel are exceptional and at the height of stupidity should you be willing to fork out a small fortune.</p>
-        <div class="cvGallery">
-            <div class="carousel">
-                <div class="slides">
-                    <img src="Beach1.JPG" alt="Pedalo. Unconventionally attractive and our most popular form of luxery travel, the pedalo comes fitted with a highly amusing fibreglass swan bodykit and peddles so you may travel at the speed you desire.">
-                    <img src="Beach2.JPG" alt="Pig. Pig riding has never been so avant-garde, with a potbelly pig between your thighs you can't help but smile as you pull its curly tail and listen to it oink and squeal. Excellent source of protein should you get lost additionally">
-                    <img src="Beach3.JPG" alt="Wormhole. Chase the stars on Shai-Hulud, life insurance and a spare pair of underpants recommended.">
-                <button class="prev">Previous</button>
-                <button class="next">Next</button>
+        <h4>Take to the stars with one of our cruise liners where you can meet other morons with a similar appetite for interdimensional travel:</h4>
+        
+            <div class="carousel-container">
+                <button id="prevBtn" onclick="prevSlide()">Previous</button>
+                <div id="carousel">
+                    <div class="slide active">The Big-Berther 700. With a 24/7 meat buffet, this space cruiser holds 500 human passengers or 27,000 live Lindt Chocolate bunnies depending on which is your preferred measurement.</div>
+                    <div class="slide">Chimney Pot. Whilst the ship's name may be unflattering, I can assure you this is the height of luxerious travelling. No photo available (It's not 'ugly' in the convential sense, would prefer if you didn't judge a book by it's cover).</div>
+                    <div class="slide">Cesspit. No dancing around this one, she's a rough cruiser and uninhabitable if you stay on for too long, excellent price however.</div>
+                </div>
+                <button id="nextBtn" onclick="nextSlide()">Next</button>
             </div>
-        </div>
+    </section>
+
+    <section>
+        <h4>If the above don't float your boat, we do have the c-suite travel packages attached below:</h4>
+        <p>While costing a pretty penny, these methods of travel are exceptional and at the height of stupidity should you be willing to fork out a small fortune.</p>
+        
+            <div class="carousel-container">
+                <button id="prevBtn" onclick="prevSlide()">Previous</button>
+                <div id="carousel">
+                    <div class="slide active">Pedalo. Unconventionally attractive and our most popular form of luxery travel, the pedalo comes fitted with a highly amusing fibreglass swan bodykit and peddles so you may travel at the speed you desire.</div>
+                    <div class="slide">Pig. Pig riding has never been so avant-garde, with a potbelly pig between your thighs you can't help but smile as you pull its curly tail and listen to it oink and squeal. Excellent source of protein should you get lost additionally.</div>
+                    <div class="slide">Wormhole. Chase the stars on a galactic Shai-Hulud, life insurance and a spare pair of underpants recommended.</div>
+                </div>
+                <button id="nextBtn" onclick="nextSlide()">Next</button>
+            </div>
     </section>
 </body>
 </html>

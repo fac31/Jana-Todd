@@ -1,25 +1,20 @@
-document.addEventListener('DOMContentLoaded', function() {
-    const textItems = document.querySelectorAll('.text-item');
-    let currentIndex = 0;
-  
-    // Show initial text item
-    textItems[currentIndex].classList.add('active');
-  
-    // Function to navigate to the previous text item
-    function showPreviousText() {
-      textItems[currentIndex].classList.remove('active');
-      currentIndex = (currentIndex - 1 + textItems.length) % textItems.length;
-      textItems[currentIndex].classList.add('active');
-    }
-  
-    // Function to navigate to the next text item
-    function showNextText() {
-      textItems[currentIndex].classList.remove('active');
-      currentIndex = (currentIndex + 1) % textItems.length;
-      textItems[currentIndex].classList.add('active');
-    }
-  
-    // Event listeners for the buttons
-    document.querySelector('.prev-button').addEventListener('click', showPreviousText);
-    document.querySelector('.next-button').addEventListener('click', showNextText);
-  });
+let currentSlide = 0;
+const slides = document.querySelectorAll('.slide');
+const totalSlides = slides.length;
+
+function showSlide(n) {
+  slides.forEach((slide) => slide.classList.remove('active'));
+  slides[n].classList.add('active');
+}
+
+document.getElementById('prevBtn').addEventListener('click', function() {
+  currentSlide = (currentSlide - 1 + totalSlides) % totalSlides;
+  showSlide(currentSlide);
+});
+
+document.getElementById('nextBtn').addEventListener('click', function() {
+  currentSlide = (currentSlide + 1) % totalSlides;
+  showSlide(currentSlide);
+});
+
+showSlide(currentSlide);
