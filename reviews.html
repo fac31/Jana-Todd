@@ -70,14 +70,15 @@
     const data = {}
     // convert HTMLformcollection into array and remove the final element (submit button)
     let elements = [...e.target.elements].slice(0,-1)
-    console.log(elements)
     try {
-      elements.forEach(({ name, value }) => {
+      elements.forEach(({ name, value, checked, type }) => {
         // for each element, create a key value pair in data from the name and value attributes
         // TODO: sanitise input
-        data[name] = value
+        if(type != "radio" || checked == true) {
+          // this if statement filters out unchecked radio inputs
+          data[name] = value
+        }
       })
-      console.log(data)
     } catch (error) {
       console.error(error)
     }
