@@ -173,6 +173,10 @@ code {
 /* ========================================= */
 /* reviews */
 
+.maincontent-container {
+  padding: 1rem;
+}
+
 .review {
   background-color: var(--bg-dark);
   display: flex;
