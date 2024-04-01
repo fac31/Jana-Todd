@@ -1,12 +1,13 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>See what our customers have said!</title>
-    <link rel="stylesheet" href="style.css">
-    <div class="grain-overlay"></div>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>See what our customers have said!</title>
+  <link rel="stylesheet" href="style.css">
 </head>
+
 <body>
   <header>
     <nav class='buttonsDiv'>
@@ -17,65 +18,95 @@
     </nav>
   </header>
   <main>
-  <section>
-    <h1 class="accent">See what our customers say.</h1>
-    <p>Our customers are valuable to us. Not simply because they line our pockets with large sums of cash, but they usually (and it really is more often than not, honestly you wouldn't believe what parents let their kids get away with these days) sport amusing haircuts which we can point and laugh at as we blast them into the void.<br>
-    See what they have to say about our impeccable services below.</p>
-  </section>
-  
-  <section>
-    <div class="primaryReview">
-      <div class="primaryReviewHeader">
-        <img src="imageProfile1">
-        <h4>Genuinely horrendous.</h4>
-          <div class="starRating">
-            <i>Star rating</i>
-          </div>
-        <p>Where to start; I could lead with being beheaded by the Bork-a-naughts one week into the cruise, or should I begin with the water-boarding on planet Xing-Gong-32T that I received instead?<br> The marmite was useless and I didn't even get to bite into my second egg. Would not recommend, daylight robbery and they have the cheek to make you pay for parking.</p>
-      </div>
+    <div class="maincontent-container">
+      <h1 class="accent">See what our customers say.</h1>
+      <p>Our customers are valuable to us. Not simply because they line our pockets with large sums of cash, but they usually (and it really is more often than not, honestly you wouldn't believe what parents let their kids get away with these days) sport amusing haircuts which we can point and laugh at as we blast them into the void. </p>
+      <p>See what they have to say about our impeccable services below.</p>
     </div>
-  </section>
-
-  <section>
-    <div class="secondaryReview">
-      <div class="secondaryReviewHeader">
-        <img src="imageProfile2">
-        <h4>DO NOT CHOOSE ROGER MOORE!!</h4>
-          <div class="starRating">
-            <i>Star rating</i>
-          </div>
-        <p>Absolute lunatic. The guy has no idea what's going on, he rambles on about someone named Hugo Drax and shoots anything that moves; worst tour guide EVER.</p>
-      </div>
-    </div>
-    </section>
-
-    <section>
-      <h3>Write a review.</h3>
-      <p>If you too have had the pleasure of using our services and recieved precious little from them, take time to write a review below to help your fellow space navigators make an irrational decision.<br>
-      Don't forget - Knowledge shared is knowledge halved!</p>
-      <form id="textForm" onsubmit="submitForm(event)">
-        <label for="name" class="flex-col">Full Name:
-          <input id="name" type="text" name="name">
-        </label>
-        <label for="textInput" class="rating-container">Rating:
-          <label for="rating">Rate out of 5:</label><br>
-          <input type="radio" id="rating1" name="rating" value="1">
-          <label for="rating1">1</label>
-          <input type="radio" id="rating2" name="rating" value="2">
-          <label for="rating2">2</label>
-          <input type="radio" id="rating3" name="rating" value="3">
-          <label for="rating3">3</label>
-          <input type="radio" id="rating4" name="rating" value="4">
-          <label for="rating4">4</label>
-          <input type="radio" id="rating5" name="rating" value="5" checked>
-          <label for="rating5">5</label><br>
-        </label>
-        <label for="reason" class="flex-col">Please type your comment here:
-          <textarea id="reason" name="reason" rows="4"></textarea>
-        </label>
-        <input class="btn" type="submit" value="Submit">
-      </form>
-    </section>
+    <!-- content will be inserted here by script -->
   </main>
+
+  <section>
+    <form id="textForm">
+      <h3 class="accent">Write a review.</h3>
+      <p>If you too have had the pleasure of using our services and recieved precious little from them, take time to write a review below to help your fellow space navigators make an irrational decision.</p>
+      <p>Don't forget - Knowledge shared is knowledge halved!</p>
+
+      <label for="name">Full Name:
+        <input id="name" name="name" type="text" required>
+      </label>
+<!--
+      <label for="rating">Rating:
+        <input id="rating" name="rating" type="number" required>
+      </label> -->
+
+      <label for="textInput" class="rating-container">Rating:
+        <label for="rating">Rate out of 5:</label><br>
+        <input type="radio" id="rating1" name="rating" value="1">
+        <label for="rating1">1</label>
+        <input type="radio" id="rating2" name="rating" value="2">
+        <label for="rating2">2</label>
+        <input type="radio" id="rating3" name="rating" value="3">
+        <label for="rating3">3</label>
+        <input type="radio" id="rating4" name="rating" value="4">
+        <label for="rating4">4</label>
+        <input type="radio" id="rating5" name="rating" value="5" checked>
+        <label for="rating5">5</label><br>
+      </label>
+
+      <label for="comment">Please type your comment here:
+        <textarea id="comment" name="comment" rows="4"></textarea>
+      </label>
+      <input type="submit" value="Submit" class="btn">
+    </form>
+  </section>
+
+<script type="module">
+  import reviews from "./reviewData.js"
+  const form = document.getElementById("textForm")
+  const main = document.querySelector("main")
+
+  const collectFormData = (e) => {
+    const data = {}
+    // convert HTMLformcollection into array and remove the final element (submit button)
+    let elements = [...e.target.elements].slice(0,-1)
+    try {
+      elements.forEach(({ name, value, checked, type }) => {
+        // for each element, create a key value pair in data from the name and value attributes
+        // TODO: sanitise input
+        if(type != "radio" || checked == true) {
+          // this if statement filters out unchecked radio inputs
+          data[name] = value
+        }
+      })
+    } catch (error) {
+      console.error(error)
+    }
+    return data
+  }
+
+  const appendNewReview = (data) => {
+    const htmlString = `<div class="reviewHeader">
+      <img src="">
+      <h4>${data.name}</h4>
+      <div class="starRating">
+        <i>${new Array(parseInt(data.rating)).fill("*").join("")}</i>
+        </div></div>
+        <p>${data.comment}</p>`;
+      const newReview = document.createElement("div")
+      newReview.classList.add("review")
+      newReview.innerHTML = htmlString
+      main.appendChild(newReview)
+  }
+
+  reviews.forEach(r => appendNewReview(r))
+
+  form.addEventListener("submit", (e) => {
+    e.preventDefault();
+    const data = collectFormData(e)
+    appendNewReview(data)
+  })
+</script>
 </body>
+
 </html>

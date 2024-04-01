@@ -79,7 +79,7 @@ label {
   gap: 0.5rem;
 }
 
-label > input[type="text"], label > textarea {
+label > input[type="text"], label > textarea, label > input[type="number"] {
   width: 100%;
   display: block;
   padding: 0.5rem;
@@ -171,6 +171,48 @@ code {
 }
 
 /* ========================================= */
+/* reviews */
+
+.maincontent-container {
+  padding: 1rem;
+}
+
+.review {
+  background-color: var(--bg-dark);
+  display: flex;
+  flex-direction: column;
+  padding: 1rem;
+  margin-bottom: 2rem;
+}
+
+.reviewHeader {
+  display: grid;
+  grid-template-areas:
+  "img h"
+  "img stars";
+  grid-template-columns: 50px auto;
+  grid-template-rows: 2rem 1rem;
+  gap: 0 1rem;
+}
+
+.reviewHeader > img {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  grid-area: img;
+}
+
+.reviewHeader > h4 {
+  grid-area: h;
+  margin: 0
+}
+
+.reviewHeader > .starRating {
+  grid-area: stars;
+  color: var(--accent);
+}
+
+/*  =================================== */
 /* Carousel styling */
 
 .carousel-container {
@@ -178,11 +220,11 @@ code {
     justify-content: center;
     align-items: center;
   }
-  
+
   .slide {
     display: none;
   }
-  
+
   .slide.active {
     display: block;
   }
