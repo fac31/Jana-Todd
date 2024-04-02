@@ -217,14 +217,14 @@ code {
 
 .carousel {
     position: relative;
-    max-width: 600px; /* Set maximum width */
-    margin: 0 auto; /* Center the carousel */
+    max-width: 600px;
+    margin: 0 auto;
 }
 
 /* CSS for slides */
 .slides {
-    display: flex; /* Arrange slides in a row */
-    overflow-x: auto; /* Enable horizontal scrolling */
+    display: flex; 
+    overflow-x: auto;
     scroll-snap-type: x mandatory; /* Enable snap scrolling */
 }
 
@@ -243,11 +243,11 @@ code {
     top: 50%;
     transform: translateY(-50%);
     padding: 10px 20px;
-    background-color: #9C002F;
-    color: #ededed;
+    background-color:#fff;
+    color: #4C4159;
     border: none;
     cursor: pointer;
-    font-family: monospace;
+    font-family: KoHo, sans-serif;
     border-radius: 5px;
 }
 
@@ -259,11 +259,11 @@ code {
 }
 
 .next:hover {
-    background-color: #5b5b5b;
+    background-color: #e9853d;
 }
 
 .prev:hover {
-    background-color: #5b5b5b;
+    background-color: #e9853d;
 }
 
 /* =============================================== */
