@@ -7,7 +7,7 @@
   --bg-dark: #4C4159;
   --accent: #FBA76A;
   --accent-dark: #e9853d;
-  --translucent: rgba(0,0,0,0.3);
+  --translucent: rgba(0,0,0,0.5);
   box-sizing: border-box;
 }
 
@@ -28,6 +28,7 @@ body {
   radial-gradient(rgba(249, 235, 192, 0.4), rgba(255,255,255,.1) 2px, transparent 30px);
   background-size: 550px 550px, 350px 350px, 250px 250px, 150px 150px;
   background-position: 0 0, 40px 60px, 130px 270px, 70px 100px;
+  background-attachment: fixed;
 }
 
 h1, h2, h3 {
@@ -143,10 +144,11 @@ code {
 /* =========================================== */
 /* banner styling */
 
-.hero {
+section.hero {
   background-image: url("./gradient.svg");
   background-repeat: no-repeat;
   background-size: cover;
+  background-attachment: fixed;
   min-height: 65vh;
   font-family: "Krona One";
   font-size: 40px;
@@ -281,32 +283,6 @@ code {
     font-family: monospace
 }
 
-.welcome {
-    display: inline-block;
-    padding: 10px 20px;
-    background-color: #9C002F;
-    color: #ededed;
-    text-decoration: none;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-}
-
-.welcome:hover {
-    background-color: #5b5b5b;
-}
-
-.reviews {
-    display: inline-block;
-    padding: 10px 20px;
-    background-color: #9C002F;
-    color: #ededed;
-    text-decoration: none;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-}
-
 /* CSS for image wrapper */
 .image-wrapper {
     margin-right: 100px; /* Optional: Add margin between images */
@@ -331,4 +307,57 @@ footer {
 .footersDiv {
     text-align: center;
     margin: 50px;
+}
+
+
+/* styling for tablet screens */
+@media (min-width: 600px) {
+  section {
+    padding: 2rem;
+  }
+}
+
+
+/* styling for larger screens */
+@media (min-width: 800px) {
+
+  header {
+    position: sticky;
+    top: 0;
+  }
+
+  .buttonsDiv {
+    max-width: 800px;
+    margin: auto;
+    justify-content: space-between;
+    padding: 0 1rem;
+  }
+
+
+  section {
+    max-width: 800px;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 2rem;
+    border-radius: 2px;
+  }
+
+  section.hero {
+    padding: 100px 0;
+    max-width: 100vw;
+  }
+
+  .review {
+    max-width: 800px;
+    margin: 0 auto 2rem auto;
+    padding: 2rem;
+    border-radius: 2px;
+  }
+
+  .maincontent-container {
+    max-width: 800px;
+    margin: auto;
+    padding: 2rem;
+  }
+
 }
