@@ -104,7 +104,7 @@
   form.addEventListener("submit", (e) => {
     e.preventDefault();
     const data = collectFormData(e)
-    appendNewReview(data)
+    appendNewReview({...data, img: ""})
   })
 </script>
 </body>
