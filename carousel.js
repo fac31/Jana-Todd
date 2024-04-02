@@ -2,7 +2,6 @@
 const carousels = document.querySelectorAll('.carousel');
 
 const moveSlidesBack = (slides) => {
-  console.log("the function was called")
   slides.scrollBy({
       left: -slides.offsetWidth,
       behavior: 'smooth'
