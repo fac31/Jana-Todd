@@ -1,20 +1,18 @@
-let currentSlide = 0;
-const slides = document.querySelectorAll('.slide');
-const totalSlides = slides.length;
+// JavaScript for carousel functionality
+const prevButton = document.querySelector('.prev');
+const nextButton = document.querySelector('.next');
+const slides = document.querySelector('.slides');
 
-function showSlide(n) {
-  slides.forEach((slide) => slide.classList.remove('active'));
-  slides[n].classList.add('active');
-}
-
-document.getElementById('prevBtn').addEventListener('click', function() {
-  currentSlide = (currentSlide - 1 + totalSlides) % totalSlides;
-  showSlide(currentSlide);
+prevButton.addEventListener('click', () => {
+    slides.scrollBy({
+        left: -slides.offsetWidth,
+        behavior: 'smooth'
+    });
 });
 
-document.getElementById('nextBtn').addEventListener('click', function() {
-  currentSlide = (currentSlide + 1) % totalSlides;
-  showSlide(currentSlide);
+nextButton.addEventListener('click', () => {
+    slides.scrollBy({
+        left: slides.offsetWidth,
+        behavior: 'smooth'
+    });
 });
-
-showSlide(currentSlide);
