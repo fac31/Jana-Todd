@@ -87,7 +87,7 @@
 
   const appendNewReview = (data) => {
     const htmlString = `<div class="reviewHeader">
-      <img src="">
+      <img src="${data.img}">
       <h4>${data.name}</h4>
       <div class="starRating">
         <i>${new Array(parseInt(data.rating)).fill("*").join("")}</i>
