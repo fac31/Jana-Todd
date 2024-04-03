@@ -42,8 +42,10 @@ h4 {
 
 header {
   background-color: var(--translucent);
+  backdrop-filter: blur(5px);
   width: 100%;
   padding: 1rem 0;
+  z-index: 20;
 }
 
 a, a:visited {
@@ -175,16 +177,12 @@ section.hero {
 /* ========================================= */
 /* reviews */
 
-.maincontent-container {
-  padding: 1rem;
-}
-
 .review {
   background-color: var(--bg-dark);
   display: flex;
   flex-direction: column;
   padding: 1rem;
-  margin-bottom: 2rem;
+  margin: 2rem 0;
 }
 
 .reviewHeader {
@@ -219,31 +217,51 @@ section.hero {
 
 .carousel {
     position: relative;
-    max-width: 600px;
+    max-width: 500px;
     margin: 0 auto;
 }
 
 /* CSS for slides */
 .slides {
-    display: flex; 
-    overflow-x: auto;
+    display: flex;
+    overflow-x: hidden;
     scroll-snap-type: x mandatory; /* Enable snap scrolling */
+    border-radius: 5px;
+  }
+
+  /* CSS for individual slide (image) */
+.slide {
+  flex: 0 0 auto; /* Disable flex grow and shrink */
+  scroll-snap-align: start; /* Snap to start of each slide */
+  position: relative;
+  width: 100%;
 }
 
-/* CSS for individual slide (image) */
-.slides img {
-    flex: 0 0 auto; /* Disable flex grow and shrink */
-    scroll-snap-align: start; /* Snap to start of each slide */
-    width: 100%; /* Fill the container width */
-    height: auto; /* Maintain aspect ratio */
+.slide img {
+  width: 100%;
+  height: auto; /* Maintain aspect ratio */
 }
+
+.slide p {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background-color: var(--translucent);
+  color: #fff;
+  padding: 1rem;
+  font-size: 0.9rem;
+  margin: 0;
+  backdrop-filter: blur(2px);
+}
+
 
 /* CSS for navigation buttons */
 .prev,
 .next {
     position: absolute;
-    top: 50%;
-    transform: translateY(-50%);
+    top: 0;
+    /* transform: translateY(-50%); */
     padding: 10px 20px;
     background-color:#fff;
     color: #4C4159;
@@ -251,6 +269,7 @@ section.hero {
     cursor: pointer;
     font-family: KoHo, sans-serif;
     border-radius: 5px;
+    transition: all 0.2s ease;
 }
 
 .next {
@@ -260,13 +279,15 @@ section.hero {
     left: 0;
 }
 
-.next:hover {
-    background-color: #e9853d;
+.next:hover, .prev:hover {
+    background-color: var(--accent-dark);
 }
 
-.prev:hover {
-    background-color: #e9853d;
+.next:disabled, .prev:disabled {
+  opacity: 0.5;
+  background-color: #fff;
 }
+
 
 /* =============================================== */
 /* Review radio buttons */
@@ -309,11 +330,33 @@ footer {
     margin: 50px;
 }
 
+.fadein {
+  animation: 0.5s ease-in forwards fade;
+}
+
+@keyframes fade {
+  0% {
+    opacity: 0;
+    transform: translateY(1rem);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
 
 /* styling for tablet screens */
 @media (min-width: 600px) {
   section {
     padding: 2rem;
+  }
+
+  .review {
+    max-width: 800px;
+    margin: 2rem auto 2rem auto;
+    padding: 2rem;
+    border-radius: 2px;
   }
 }
 
@@ -347,17 +390,33 @@ footer {
     max-width: 100vw;
   }
 
-  .review {
-    max-width: 800px;
-    margin: 0 auto 2rem auto;
-    padding: 2rem;
-    border-radius: 2px;
+  .slide p {
+    font-size: 1.2rem;
+    backdrop-filter: blur(5px);
   }
 
-  .maincontent-container {
-    max-width: 800px;
-    margin: auto;
-    padding: 2rem;
+  .prev,
+  .next {
+      position: absolute;
+      top: 0;
+      /* transform: translateY(-50%); */
+      padding: 10px 20px;
+      background-color:#fff;
+      color: #4C4159;
+      border: none;
+      cursor: pointer;
+      font-family: KoHo, sans-serif;
+      border-radius: 2px;
+      width: 80px;
+      height: 100%;
+      text-align: center;
+  }
+
+  .next {
+      right: -80px;
+  }
+  .prev {
+      left: -80px;
   }
 
 }

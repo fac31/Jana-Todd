@@ -19,15 +19,14 @@
   </header>
   <main>
     <section>
-      <div class="maincontent-container">
-        <h1 class="accent">See what our customers say.</h1>
-        <p>Our customers are valuable to us. Not simply because they line our pockets with large sums of cash, but they usually (and it really is more often than not, honestly you wouldn't believe what parents let their kids get away with these days) sport amusing haircuts which we can point and laugh at as we blast them into the void. </p>
-        <p>See what they have to say about our impeccable services below.</p>
-      </div>
+      <h1 class="accent">See what our customers say.</h1>
+      <p>Our customers are valuable to us. Not simply because they line our pockets with large sums of cash, but they usually (and it really is more often than not, honestly you wouldn't believe what parents let their kids get away with these days) sport amusing haircuts which we can point and laugh at as we blast them into the void. </p>
+      <p>See what they have to say about our impeccable services below.</p>
+    </section>
     <!-- content will be inserted here by script -->
     </section>
     </main>
-    
+
   <section>
     <form id="textForm">
       <h3 class="accent">Write a review.</h3>
@@ -37,10 +36,6 @@
       <label for="name">Full Name:
         <input id="name" name="name" type="text" required>
       </label>
-<!--
-      <label for="rating">Rating:
-        <input id="rating" name="rating" type="number" required>
-      </label> -->
 
       <label for="textInput" class="rating-container">Rating:
         <label for="rating">Rate out of 5:</label><br>
@@ -89,14 +84,14 @@
 
   const appendNewReview = (data) => {
     const htmlString = `<div class="reviewHeader">
-      <img src="">
+      <img src="${data.img}">
       <h4>${data.name}</h4>
       <div class="starRating">
-        <i>${new Array(parseInt(data.rating)).fill("*").join("")}</i>
+        <i>${new Array(parseInt(data.rating)).fill("*").join(" ")}</i>
         </div></div>
         <p>${data.comment}</p>`;
       const newReview = document.createElement("div")
-      newReview.classList.add("review")
+      newReview.classList.add("review", "fadein")
       newReview.innerHTML = htmlString
       main.appendChild(newReview)
   }
@@ -106,7 +101,7 @@
   form.addEventListener("submit", (e) => {
     e.preventDefault();
     const data = collectFormData(e)
-    appendNewReview(data)
+    appendNewReview({...data, img: ""})
   })
 </script>
 </body>
