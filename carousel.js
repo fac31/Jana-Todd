@@ -18,6 +18,7 @@ const moveSlidesForth = (slides, prev, next) => {
       left: slides.offsetWidth,
       behavior: 'smooth'
   });
+  prev.disabled = false
 }
 
 carousels.forEach((carousel) => {
