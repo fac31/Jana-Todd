@@ -33,6 +33,12 @@ The site is written with HTML and CSS. Accessibility checked with WAVE https://w
 - Reviews JavaScript
 - AI image generation
 - How to merge unrelated repo's
+
+## If we had more time...
+
+- Store user reviews in localstorage, or even a database somewhere
+- Add info on how to purchase packages and allow the user to make selections on the page
+- use star icons for ratings
   
 ## Authors
 
