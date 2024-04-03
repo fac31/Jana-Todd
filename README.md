@@ -4,7 +4,7 @@
 
 Intergalactic Travel Agency fit for any and all needs of those hitchhiking around the galaxy.
 
-(TODO: screenshot)
+![image](https://github.com/fac31/Jana-Todd/assets/49396588/fae9b759-e064-4d5e-9de2-23997aa7eb60)
 
 ## User stories
 
