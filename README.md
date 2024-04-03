@@ -27,8 +27,13 @@ The site is written with HTML and CSS. Accessibility checked with WAVE https://w
 
 ## What we learned
 
-(TODO)
-
+- Showed how to make a gradient
+- How to get a carousel to function properly
+- CSS conceptualisation to realisation via Figma
+- Reviews JavaScript
+- AI image generation
+- How to merge unrelated repo's
+  
 ## Authors
 
 <a href="https://github.com/tt01924">
