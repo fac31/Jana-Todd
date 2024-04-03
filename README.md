@@ -1,8 +1,6 @@
-[visit the site here](https://fac31.github.io/Jana-Todd/)
-
 # About
 
-Intergalactic Travel Agency fit for any and all needs of those hitchhiking around the galaxy.
+Intergalactic Travel Agency fit for any and all needs of those hitchhiking around the galaxy. [Visit us here!](https://fac31.github.io/Jana-Todd/)
 
 ![image](https://github.com/fac31/Jana-Todd/assets/49396588/fae9b759-e064-4d5e-9de2-23997aa7eb60)
 
@@ -39,6 +37,7 @@ The site is written with HTML and CSS. Accessibility checked with WAVE https://w
 - Store user reviews in localstorage, or even a database somewhere
 - Add info on how to purchase packages and allow the user to make selections on the page
 - use star icons for ratings
+- a nice illustration of the travel equipment!
   
 ## Authors
 
