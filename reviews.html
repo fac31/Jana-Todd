@@ -86,11 +86,11 @@
       <img src="${data.img}">
       <h4>${data.name}</h4>
       <div class="starRating">
-        <i>${new Array(parseInt(data.rating)).fill("*").join("")}</i>
+        <i>${new Array(parseInt(data.rating)).fill("*").join(" ")}</i>
         </div></div>
         <p>${data.comment}</p>`;
       const newReview = document.createElement("div")
-      newReview.classList.add("review")
+      newReview.classList.add("review", "fadein")
       newReview.innerHTML = htmlString
       main.appendChild(newReview)
   }
